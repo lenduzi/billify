@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billify - Batch Invoice Renamer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="win98">
+    <section class="hero-section">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Batch invoice renaming, in a calmer decade.</h1>
+          <p class="hero-sub">
+            Upload your Shopify PDFs, sort by invoice date, and download neatly
+            named files in one click. No spreadsheets. No chaos.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-cta" href="#app">Open the App</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            class="hero-illustration"
+            src="assets/header_computer.png"
+            alt="Retro computer setup with multiple CRT monitors."
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="desktop" id="app">
+      <div class="desktop-inner">
+        <div class="window">
+        <div class="title-bar">
+          <div class="title">
+            <span class="title-icon" aria-hidden="true"></span>
+            Billify
+          </div>
+          <div class="window-controls" aria-hidden="true">
+            <button class="win-btn">_</button>
+            <button class="win-btn">□</button>
+            <button class="win-btn">×</button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <span>File</span>
+          <span>Edit</span>
+          <span>Help</span>
+        </div>
+
+        <div class="window-body">
+          <div class="toolbar">
+            <div class="toolbar-group">
+              <label for="shopName">Shop Name</label>
+              <input id="shopName" type="text" placeholder="Optional" />
+              <label class="checkbox">
+                <input id="includeShop" type="checkbox" />
+                Include in filename
+              </label>
+            </div>
+            <div class="toolbar-group">
+              <label>Preview</label>
+              <div class="preview-box" id="previewName">Rechnung_01_2026.pdf</div>
+            </div>
+            <div class="toolbar-group">
+              <label for="start">Next #</label>
+              <div class="counter-row">
+                <input id="start" type="number" min="1" value="1" />
+                <button id="resetCounter">Reset Counter</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="drop-zone" id="dropZone" tabindex="0">
+            <div class="drop-icon" aria-hidden="true"></div>
+            <div class="drop-text">Drop PDF files here</div>
+            <div class="drop-sub">or click to browse</div>
+            <input id="files" type="file" accept="application/pdf" multiple />
+          </div>
+
+          <details class="advanced">
+            <summary>Advanced Options</summary>
+            <div class="grid">
+              <div class="field">
+                <label for="prefix">Prefix</label>
+                <input id="prefix" type="text" value="Rechnung" />
+              </div>
+              <div class="field">
+                <label for="year">Year / Suffix</label>
+                <input id="year" type="text" value="2026" />
+              </div>
+              <div class="field">
+                <label for="padding">Zero Padding</label>
+                <input id="padding" type="number" min="0" value="2" />
+              </div>
+              <div class="field">
+                <label for="dateFormat">Date Format Preference</label>
+                <select id="dateFormat">
+                  <option value="DMY" selected>DD.MM.YYYY (default)</option>
+                  <option value="MDY">MM/DD/YYYY</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="sortOrder">Sort Order</label>
+                <select id="sortOrder">
+                  <option value="furthest" selected>Furthest from today → closest</option>
+                  <option value="oldest">Oldest → newest</option>
+                  <option value="newest">Newest → oldest</option>
+                </select>
+              </div>
+            </div>
+          </details>
+
+          <div class="actions-row">
+            <button id="downloadZip" disabled>Rename & Download ZIP</button>
+          </div>
+
+          <div class="list-view">
+            <div class="list-header">
+              <span>File</span>
+              <span>Invoice Date</span>
+              <span>Assigned #</span>
+              <span>New Filename</span>
+            </div>
+            <div class="table" id="table">
+              <div class="row empty" id="emptyState">No files loaded yet.</div>
+            </div>
+          </div>
+
+          <div class="status-bar">
+            <div class="status-cell" id="fileCount">0 files loaded</div>
+            <div class="status-cell" id="status">Upload PDFs to begin.</div>
+            <div class="status-cell" id="counterSummary">Counter: 1 | Shop: -</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

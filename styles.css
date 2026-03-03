@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Manrope:wght@400;600&family=VT323&display=swap");
+
+:root {
+  color-scheme: light;
+  --desktop: #008080;
+  --window: #c0c0c0;
+  --window-dark: #808080;
+  --window-light: #ffffff;
+  --title-start: #000080;
+  --title-end: #1084d0;
+  --text: #1b1b1b;
+  --sunken: #e9e9e9;
+  --accent: #000080;
+  --shadow-inset: inset -1px -1px 0 var(--window-dark), inset 1px 1px 0 var(--window-light);
+  --shadow-outset: -1px -1px 0 var(--window-light), 1px 1px 0 var(--window-dark);
+  --font: "MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: #f7f3ed;
+  color: var(--text);
+}
+
+.win98 {
+  min-height: 100vh;
+}
+
+.hero-section {
+  background: #fdfbf6;
+  padding: 90px 20px 60px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-copy {
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(2.4rem, 3.6vw, 3.6rem);
+  font-weight: 600;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+  color: #1e1c18;
+}
+
+.hero-sub {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  color: #5a544b;
+  max-width: 520px;
+  margin: 0 auto 24px;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: #11110f;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-cta:hover {
+  background: #000;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-illustration {
+  width: min(520px, 100%);
+  height: auto;
+  filter: drop-shadow(0 20px 35px rgba(25, 22, 18, 0.2));
+}
+
+.desktop {
+  background: var(--desktop);
+  padding: 40px 20px 80px;
+}
+
+.desktop-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  width: min(1100px, 100%);
+  background: var(--window);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-outset), inset 0 0 0 1px var(--window-light);
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  color: white;
+  background: linear-gradient(90deg, var(--title-start), var(--title-end));
+  font-weight: 600;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.title-icon {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #fff, #3e3e3e);
+  border: 1px solid #000;
+  box-shadow: var(--shadow-outset);
+}
+
+.window-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.win-btn {
+  width: 20px;
+  height: 18px;
+  border: 1px solid #000;
+  background: var(--window);
+  box-shadow: var(--shadow-outset);
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 18px;
+  padding: 6px 10px;
+  background: var(--window);
+  border-bottom: 2px solid var(--window-dark);
+  font-size: 0.85rem;
+}
+
+.window-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 12px;
+  background: var(--window);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+}
+
+.toolbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.toolbar-group input {
+  height: 30px;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+input,
+select,
+button,
+summary {
+  font-family: var(--font);
+}
+
+input,
+select {
+  background: white;
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  padding: 4px 8px;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.checkbox input {
+  width: 14px;
+  height: 14px;
+}
+
+.preview-box {
+  background: var(--sunken);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  padding: 6px 8px;
+  font-family: "VT323", var(--font);
+  font-size: 1rem;
+}
+
+.counter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#start {
+  width: 90px;
+}
+
+button {
+  background: var(--window);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-outset);
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: var(--shadow-inset);
+}
+
+button:disabled {
+  color: #777;
+  cursor: not-allowed;
+}
+
+.drop-zone {
+  background: white;
+  border: 2px dashed var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  padding: 32px 16px;
+  text-align: center;
+  position: relative;
+}
+
+.drop-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.drop-zone.dragover {
+  background: #f5f5f5;
+  border-color: var(--accent);
+}
+
+.drop-icon {
+  width: 44px;
+  height: 32px;
+  margin: 0 auto 10px;
+  background: linear-gradient(180deg, #e5e5e5, #bdbdbd);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-outset);
+}
+
+.drop-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.drop-sub {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.advanced {
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  padding: 8px 12px;
+  background: var(--window);
+}
+
+.advanced summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list-view {
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  background: white;
+}
+
+.list-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #e0e0e0;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--window-dark);
+}
+
+.table {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 8px;
+  font-size: 0.85rem;
+  padding: 4px 6px;
+  border: 1px solid #c8c8c8;
+  background: #fafafa;
+}
+
+.row.empty {
+  text-align: center;
+  background: #f0f0f0;
+}
+
+.filename {
+  font-family: "VT323", var(--font);
+}
+
+.date-input {
+  width: 100%;
+  height: 28px;
+}
+
+.date-input.invalid {
+  border-color: #a40000;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 2px 6px;
+  background: #e0e0e0;
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  font-family: "VT323", var(--font);
+}
+
+.status-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  background: var(--window);
+  border: 2px solid var(--window-dark);
+  box-shadow: var(--shadow-inset);
+  padding: 4px 6px;
+  font-size: 0.8rem;
+}
+
+.status-cell {
+  background: #f1f1f1;
+  border: 1px solid var(--window-dark);
+  padding: 4px 6px;
+}
+
+@media (max-width: 860px) {
+  .window-controls {
+    display: none;
+  }
+
+  .list-header {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .row > div::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .status-bar {
+    grid-template-columns: 1fr;
+  }
+}
