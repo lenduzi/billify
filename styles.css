@@ -11,6 +11,15 @@
   --text: #1b1b1b;
   --sunken: #e9e9e9;
   --accent: #000080;
+  --scrollbar-track: #c6c6c6;
+  --scrollbar-thumb: #2a5db0;
+  --scrollbar-thumb-light: #7ea3ff;
+  --scrollbar-thumb-dark: #1f4a92;
+  --scrollbar-thumb-border: #16356f;
+  --scrollbar-thumb-highlight: #cfe0ff;
+  --scrollbar-thumb-shadow: #102752;
+  --scrollbar-thumb-hover: #356dd1;
+  --scrollbar-thumb-hover-dark: #2457b0;
   --shadow-inset: inset -1px -1px 0 var(--window-dark), inset 1px 1px 0 var(--window-light);
   --shadow-outset: -1px -1px 0 var(--window-light), 1px 1px 0 var(--window-dark);
   --font: "MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif;
@@ -18,6 +27,8 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: auto;
 }
 
 html,
@@ -31,6 +42,31 @@ body {
   background: var(--desktop) !important;
   background-image: none !important;
   color: var(--text);
+}
+
+*::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-left: 1px solid #9a9a9a;
+  box-shadow: inset 1px 1px 0 var(--window-light), inset -1px -1px 0 #9a9a9a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--scrollbar-thumb-light), var(--scrollbar-thumb) 55%, var(--scrollbar-thumb-dark));
+  border: 2px solid var(--scrollbar-thumb-border);
+  box-shadow: inset 1px 1px 0 var(--scrollbar-thumb-highlight), inset -1px -1px 0 var(--scrollbar-thumb-shadow);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--scrollbar-thumb-light), var(--scrollbar-thumb-hover) 55%, var(--scrollbar-thumb-hover-dark));
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
 }
 
 .win98 {
